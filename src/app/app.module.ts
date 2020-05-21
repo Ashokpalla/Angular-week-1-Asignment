@@ -1,18 +1,39 @@
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA }  from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatListModule } from '@angular/material/list';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
-import { AppRoutingModule } from './app-routing.module';
+import 'hammerjs';
+
 import { AppComponent } from './app.component';
+import { MenuComponent } from './menu/menu.component';
+import { DishdetailComponent } from './dishdetail/dishdetail.component';
+
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
+	declarations: [
+		AppComponent,
+		MenuComponent,
+    DishdetailComponent
+  
+	],
+	imports: [
+    RouterModule,
     BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    MatToolbarModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatCardModule,
+    MatListModule,
+		FlexLayoutModule
+	],
+	providers: [],
+  bootstrap: [AppComponent],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule { }
